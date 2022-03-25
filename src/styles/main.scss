@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+@mixin fw-bold {
+    font-weight: 500;
+}
+@mixin fw-regular {
+    font-weight: 300;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    @include fw-regular;
+    color: rgb(152, 155, 173);
+    background-color: #030f0c;
+}
+section {
+    max-width: 60rem;
+    margin: 2rem auto;
+}
+h1 {
+    margin: 2rem 1rem;
+    font-size: 3rem;
+}
+.container {
+    padding: 1rem;
+}
+.auras {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1rem;
+    .auras__item {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+        div {
+            grid-column: 1;
+            grid-row: span 2;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            max-width: 64px;
+        }
+        p {
+            grid-column: 2 / span 3;
+            display: flex;
+            align-items: center;
+        }
+        p:nth-child(3) + p {
+            @include fw-bold;
+        }
+        .auras__name {
+            @include fw-bold;
+            font-size: 1.2rem;
+        }
+    }
+    .selected {
+        // border: 2px solid rgba(white, 0.11);
+        border-radius: 0.3rem;
+        background-color: rgba(white, 0.1);
+        transform: scale(1.03);
+    }
+}
+

@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: #989bad;
+  background-color: #030f0c;
+}
+
+section {
+  max-width: 60rem;
+  margin: 2rem auto;
+}
+
+h1 {
+  margin: 2rem 1rem;
+  font-size: 3rem;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.auras {
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+.auras .auras__item {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.auras .auras__item div {
+  grid-column: 1;
+  grid-row: span 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auras .auras__item img {
+  max-width: 64px;
+}
+.auras .auras__item p {
+  grid-column: 2/span 3;
+  display: flex;
+  align-items: center;
+}
+.auras .auras__item p:nth-child(3) + p {
+  font-weight: 500;
+}
+.auras .auras__item .auras__name {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.auras .selected {
+  border-radius: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
+}
+
+/*# sourceMappingURL=main.css.map */
